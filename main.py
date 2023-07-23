@@ -146,8 +146,9 @@ model_path = "./model/face_landmarker.task"
 
 print(f"Model Path: {model_path}")
 
-infile_path = "./in/" + input("Please input image name (should be inside ./in/ directory) => ")
-outfile_path = "./out/output.obj"
+infile_name = input("Please input image name (should be inside ./in/ directory) => ")
+infile_path = "./in/" + infile_name
+outfile_path = f"./out/{infile_name.split('.')[0]}_output.obj"
 try:
     mp_image = mp.Image.create_from_file(infile_path)
 except:
